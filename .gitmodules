@@ -1,0 +1,6 @@
+[submodule "ifarchive-static"]
+	path = ifarchive-static
+	url = https://github.com/iftechfoundation/ifarchive-static
+[submodule "ifarchive-ifmap-py"]
+	path = ifarchive-ifmap-py
+	url = https://github.com/iftechfoundation/ifarchive-ifmap-py

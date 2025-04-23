@@ -13,3 +13,6 @@ chown www-data:ifarchive logs
 
 chmod 775 bin doc lib htdocs incoming trash cgi-bin wsgi-bin
 chmod 770 logs
+
+mkdir htdocs/misc htdocs/if-archive htdocs/indexes htdocs/metadata 
+chown ifarchive:ifarchive htdocs/*

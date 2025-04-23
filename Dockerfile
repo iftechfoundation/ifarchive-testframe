@@ -7,3 +7,6 @@ RUN apt-get install -y apache2 apache2-dev python3 python3-pip
 COPY --chmod=755 create-var-ifarchive.sh /tmp
 
 RUN /tmp/create-var-ifarchive.sh
+
+COPY --chown=ifarchive ifarchive-static/index.html /var/ifarchive/htdocs
+COPY --chown=ifarchive ifarchive-static/misc /var/ifarchive/htdocs/misc

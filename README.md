@@ -2,7 +2,7 @@
 
 This repository agglomerates all (most) of the repos involved in running the [IF Archive][ifarch]. It allows you to build a test-mode Archive as a Docker container.
 
-[ifarch]: https://ifarchive.org.
+[ifarch]: https://ifarchive.org
 
 ## How does this differ from the real IF Archive?
 
@@ -25,5 +25,5 @@ Another Archive subdomain is [unbox.ifarchive.org][if-unbox], which runs on a se
 	# Launch a container with the image, mapping container port 80 (Apache) to real port 8888
 	docker run -p 8888:80 -i -t ifarch
 
-Then visit `http://localhost:8888` in your browser.
+Then visit `http://localhost:8888/` in your browser.
 

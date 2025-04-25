@@ -5,6 +5,8 @@
 # Create two users.
 adduser --gecos INFO --disabled-password ifarchive
 adduser --gecos INFO --disabled-password uploaders
+adduser ifarchive uploaders
+adduser www-data uploaders
 
 # Create the directory tree that Archive files will live in.
 

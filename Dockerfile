@@ -17,6 +17,9 @@ RUN /tmp/create-var-ifarchive.sh
 COPY 000-ifarchive.conf /etc/apache2/sites-available
 RUN a2dissite 000-default
 RUN a2ensite 000-ifarchive
+RUN a2enmod headers
+RUN a2enmod rewrite
+RUN a2enmod cgid
 
 # Copy over our scripts.
 COPY --chmod=755 ifarchive-ifmap-py/make-master-index /var/ifarchive/bin
@@ -28,6 +31,8 @@ COPY --chmod=755 ifarchive-ifmap-py/build-indexes-bg /var/ifarchive/bin
 # Copy over config and template data for our scripts.
 COPY --chown=ifarchive:uploaders --chmod=640 ifarch.config /var/ifarchive/lib
 COPY --chown=ifarchive ifarchive-ifmap-py/lib /var/ifarchive/lib/ifmap
+COPY --chown=ifarchive --chmod=775 ifarchive-upload-py/upload.py /var/ifarchive/cgi-bin
+COPY --chown=ifarchive ifarchive-upload-py/lib /var/ifarchive/lib/uploader
 
 # Copy over static files for the web server.
 COPY --chown=ifarchive ifarchive-static/index.html /var/ifarchive/htdocs

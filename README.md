@@ -2,9 +2,15 @@
 
 This repository agglomerates all (most) of the repos involved in running the [IF Archive][ifarch]. It allows you to build a test-mode Archive as a Docker container.
 
+Note: I don't have the container published anywhere. This is meant for testing and development, not real-world use.
+
+Also note: The setup scripts could be simplified with Docker Compose. I'll get there.
+
 [ifarch]: https://ifarchive.org
 
 ## How does this differ from the real IF Archive?
+
+The real Archive is not built on Docker! Maybe it should be, but the current configuration was set up in 2017 and I didn't use Docker then. This setup is only for testing.
 
 The real Archive service is split across several subdomains: [ifarchive.org][ifarch], [search.ifarchive.org][if-search], [upload.ifarchive.org][if-upload], and so on. They all currently run on the same Linux instance; the subdomain split is just futureproofing. But it means that the pages have some absolute-URL links to each other. In test mode, we adjust (some of) those links to be server-relative.
 

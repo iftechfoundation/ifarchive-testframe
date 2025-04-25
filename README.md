@@ -4,8 +4,6 @@ This repository agglomerates all (most) of the repos involved in running the [IF
 
 Note: I don't have the container published anywhere. This is meant for testing and development, not real-world use.
 
-Also note: The setup scripts could be simplified with Docker Compose. I'll get there.
-
 [ifarch]: https://ifarchive.org
 
 ## How does this differ from the real IF Archive?
@@ -25,11 +23,12 @@ Another Archive subdomain is [unbox.ifarchive.org][if-unbox], which runs on a se
 	# If the submodules were not filled in by your git client
 	git submodule init; git submodule update
 	
-	# Construct the image (takes a while the first time)
-	docker build -t ifarch .
-	
-	# Launch a container with the image, mapping container port 80 (Apache) to real port 8888
-	docker run -p 8888:80 -i -t ifarch
+	# Construct and launch the image (takes a while the first time)
+	docker compose up
 
 Then visit `http://localhost:8888/` in your browser.
+
+To get a root shell inside the container:
+
+	docker compose exec -i -t ifarch bash
 

@@ -7,3 +7,6 @@
 [submodule "ifarchive-upload-py"]
 	path = ifarchive-upload-py
 	url = https://github.com/iftechfoundation/ifarchive-upload-py
+[submodule "ifarchive-admintool"]
+	path = ifarchive-admintool
+	url = https://github.com/iftechfoundation/ifarchive-admintool

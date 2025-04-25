@@ -1,7 +1,12 @@
 #!/bin/bash
 
+# Initial Archive setup.
+
+# Create two users.
 adduser --gecos INFO --disabled-password ifarchive
 adduser --gecos INFO --disabled-password uploaders
+
+# Create the directory tree that Archive files will live in.
 
 mkdir /var/ifarchive
 cd /var/ifarchive

@@ -10,3 +10,6 @@
 [submodule "ifarchive-admintool"]
 	path = ifarchive-admintool
 	url = https://github.com/iftechfoundation/ifarchive-admintool
+[submodule "ifarchive-search"]
+	path = ifarchive-search
+	url = https://github.com/iftechfoundation/ifarchive-search

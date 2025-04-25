@@ -1,0 +1,7 @@
+name: ifarchive-testframe
+
+services:
+  ifarch:
+    build: .
+    ports:
+      - 8888:80

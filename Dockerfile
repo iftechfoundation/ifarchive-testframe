@@ -58,5 +58,11 @@ RUN /tmp/tweak-for-test-mode.sh
 RUN /var/ifarchive/bin/make-master-index
 RUN /var/ifarchive/bin/build-indexes
 
+# Initial setup for the search library
+RUN python3 /var/ifarchive/wsgi-bin/search.wsgi build --create
+
+# Those setup commands created some logs; make sure they have the right owner.
+RUN chown www-data:www-data /var/ifarchive/logs/search.log
+
 # Run Apache (with logs on stdout) as our front container process.
 CMD [ "apachectl", "-D", "FOREGROUND" ]

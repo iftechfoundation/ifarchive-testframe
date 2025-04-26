@@ -5,6 +5,3 @@ services:
     build: .
     ports:
       - 8888:80
-    volumes:
-      - ./ifarchive-ifmap-py/lib:/var/ifarchive/lib/ifmap
-      - ./ifarchive-upload-py/lib:/var/ifarchive/lib/uploader

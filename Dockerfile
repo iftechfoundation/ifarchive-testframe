@@ -30,7 +30,9 @@ COPY --chmod=755 ifarchive-ifmap-py/build-indexes-bg /var/ifarchive/bin
 
 # Copy over config and template data for our scripts.
 COPY --chown=ifarchive:uploaders --chmod=640 ifarch.config /var/ifarchive/lib
+COPY --chown=ifarchive ifarchive-ifmap-py/lib /var/ifarchive/lib/ifmap
 COPY --chown=ifarchive --chmod=775 ifarchive-upload-py/upload.py /var/ifarchive/cgi-bin
+COPY --chown=ifarchive ifarchive-upload-py/lib /var/ifarchive/lib/uploader
 
 # Copy over static files for the web server.
 COPY --chown=ifarchive ifarchive-static/index.html /var/ifarchive/htdocs

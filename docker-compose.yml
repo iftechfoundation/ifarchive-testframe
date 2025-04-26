@@ -5,3 +5,10 @@ services:
     build: .
     ports:
       - 8888:80
+    volumes:
+      - ./ifarchive-ifmap-py/make-master-index:/var/ifarchive/bin/make-master-index
+      - ./ifarchive-ifmap-py/make-master-index.py:/var/ifarchive/bin/make-master-index.py
+      - ./ifarchive-ifmap-py/ifmap.py:/var/ifarchive/bin/ifmap.py
+      - ./ifarchive-ifmap-py/build-indexes:/var/ifarchive/bin/build-indexes
+      - ./ifarchive-ifmap-py/build-indexes-bg:/var/ifarchive/bin/build-indexes-bg
+

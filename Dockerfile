@@ -21,13 +21,6 @@ RUN a2enmod headers
 RUN a2enmod rewrite
 RUN a2enmod cgid
 
-# Copy over our scripts.
-COPY --chmod=755 ifarchive-ifmap-py/make-master-index /var/ifarchive/bin
-COPY --chmod=755 ifarchive-ifmap-py/make-master-index.py /var/ifarchive/bin
-COPY --chmod=755 ifarchive-ifmap-py/ifmap.py /var/ifarchive/bin
-COPY --chmod=755 ifarchive-ifmap-py/build-indexes /var/ifarchive/bin
-COPY --chmod=755 ifarchive-ifmap-py/build-indexes-bg /var/ifarchive/bin
-
 # Copy over config and template data for our scripts.
 COPY --chown=ifarchive:uploaders --chmod=640 ifarch.config /var/ifarchive/lib
 COPY --chown=ifarchive ifarchive-ifmap-py/lib /var/ifarchive/lib/ifmap

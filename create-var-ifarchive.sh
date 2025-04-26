@@ -13,6 +13,7 @@ adduser www-data uploaders
 mkdir /var/ifarchive
 cd /var/ifarchive
 mkdir bin doc lib logs htdocs incoming trash cgi-bin wsgi-bin
+mkdir lib/sql lib/searchindex
 
 chown ifarchive:ifarchive bin doc lib htdocs cgi-bin wsgi-bin
 chown www-data:uploaders incoming trash

@@ -5,9 +5,9 @@ EXPOSE 80
 
 # Install Apache and Python.
 RUN apt-get update -y
-RUN apt-get install -y apache2 apache2-dev python3 python3-pip
+RUN apt-get install -y apache2 apache2-dev python3 python3-pip libapache2-mod-wsgi-py3
 
-RUN pip3 install markdown Jinja2 pytz
+RUN pip3 install markdown Jinja2 pytz mod-wsgi whoosh
 
 # Copy over a script that creates the basic directory structure.
 COPY --chmod=755 create-var-ifarchive.sh /tmp

@@ -18,6 +18,10 @@ Another Archive subdomain is [unbox.ifarchive.org][if-unbox], which runs on a se
 [if-upload]: https://upload.ifarchive.org/cgi-bin/upload.py
 [if-unbox]: https://unbox.ifarchive.org/
 
+The real Archive hosts several other domains (babel.ifarchive.org, spagmag.org, inform-fiction.org) which are unrelated to the core Archive service. These are not represented in this test framework either.
+
+On the real Archive, the file directory (`/var/ifarchive/htdocs/if-archive`) is a mount point for a separate storage volume.
+
 ## To run
 
 	# If the submodules were not filled in by your git client

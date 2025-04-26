@@ -33,6 +33,13 @@ COPY --chown=ifarchive:uploaders --chmod=640 ifarch.config /var/ifarchive/lib
 COPY --chown=ifarchive ifarchive-ifmap-py/lib /var/ifarchive/lib/ifmap
 COPY --chown=ifarchive --chmod=775 ifarchive-upload-py/upload.py /var/ifarchive/cgi-bin
 COPY --chown=ifarchive ifarchive-upload-py/lib /var/ifarchive/lib/uploader
+COPY --chown=ifarchive --chmod=775 ifarchive-admintool/admin.wsgi /var/ifarchive/wsgi-bin
+COPY --chown=ifarchive ifarchive-admintool/tinyapp /var/ifarchive/wsgi-bin/tinyapp
+COPY --chown=ifarchive ifarchive-admintool/adminlib /var/ifarchive/wsgi-bin/adminlib
+COPY --chown=ifarchive ifarchive-admintool/templates /var/ifarchive/lib/admintool
+COPY --chown=ifarchive --chmod=775 ifarchive-search/search.wsgi /var/ifarchive/wsgi-bin
+COPY --chown=ifarchive ifarchive-search/searchlib /var/ifarchive/wsgi-bin/searchlib
+COPY --chown=ifarchive ifarchive-search/templates /var/ifarchive/lib/searchtpl
 
 # Copy over static files for the web server.
 COPY --chown=ifarchive ifarchive-static/index.html /var/ifarchive/htdocs

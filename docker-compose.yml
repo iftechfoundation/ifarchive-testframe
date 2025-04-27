@@ -11,4 +11,12 @@ services:
       - ./ifarchive-ifmap-py/ifmap.py:/var/ifarchive/bin/ifmap.py
       - ./ifarchive-ifmap-py/build-indexes:/var/ifarchive/bin/build-indexes
       - ./ifarchive-ifmap-py/build-indexes-bg:/var/ifarchive/bin/build-indexes-bg
-
+      # for admintool
+      - ./ifarchive-admintool/admin.wsgi:/var/ifarchive/wsgi-bin/admin.wsgi
+      - ./ifarchive-admintool/tinyapp:/var/ifarchive/wsgi-bin/tinyapp
+      - ./ifarchive-admintool/adminlib:/var/ifarchive/wsgi-bin/adminlib
+      - ./ifarchive-admintool/templates:/var/ifarchive/lib/admintool
+      # for search
+      - ./ifarchive-search/search.wsgi:/var/ifarchive/wsgi-bin/search.wsgi
+      - ./ifarchive-search/searchlib:/var/ifarchive/wsgi-bin/searchlib
+      - ./ifarchive-search/templates:/var/ifarchive/lib/searchtpl

@@ -8,9 +8,14 @@ services:
     volumes:
       - ./ifarchive-ifmap-py/make-master-index:/var/ifarchive/bin/make-master-index
       - ./ifarchive-ifmap-py/make-master-index.py:/var/ifarchive/bin/make-master-index.py
-      - ./ifarchive-ifmap-py/ifmap.py:/var/ifarchive/bin/ifmap.py
       - ./ifarchive-ifmap-py/build-indexes:/var/ifarchive/bin/build-indexes
       - ./ifarchive-ifmap-py/build-indexes-bg:/var/ifarchive/bin/build-indexes-bg
+      # for ifmap
+      - ./ifarchive-ifmap-py/ifmap.py:/var/ifarchive/bin/ifmap.py
+      - ./ifarchive-ifmap-py/lib:/var/ifarchive/lib/ifmap
+      # for upload
+      - ./ifarchive-upload-py/upload.py:/var/ifarchive/cgi-bin/upload.py
+      - ./ifarchive-upload-py/lib:/var/ifarchive/lib/uploader
       # for admintool
       - ./ifarchive-admintool/admin.wsgi:/var/ifarchive/wsgi-bin/admin.wsgi
       - ./ifarchive-admintool/tinyapp:/var/ifarchive/wsgi-bin/tinyapp

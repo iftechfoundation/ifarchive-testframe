@@ -14,7 +14,7 @@ COPY --chmod=755 create-var-ifarchive.sh /tmp
 RUN /tmp/create-var-ifarchive.sh
 
 # Set up Apache config.
-COPY 000-ifarchive.conf /etc/apache2/sites-available
+COPY config/000-ifarchive.conf /etc/apache2/sites-available
 RUN a2dissite 000-default
 RUN a2ensite 000-ifarchive
 RUN a2enmod headers
@@ -22,7 +22,7 @@ RUN a2enmod rewrite
 RUN a2enmod cgid
 
 # Copy over config file for our scripts.
-COPY --chown=ifarchive:uploaders --chmod=640 ifarch.config /var/ifarchive/lib
+COPY --chown=ifarchive:uploaders --chmod=640 config/ifarch.config /var/ifarchive/lib
 
 # Copy over static files for the web server.
 COPY --chown=ifarchive ifarchive-static/index.html /var/ifarchive/htdocs

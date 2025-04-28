@@ -24,9 +24,7 @@ RUN a2enmod cgid
 # Copy over config file for our scripts.
 COPY --chown=ifarchive:uploaders --chmod=640 config/ifarch.config /var/ifarchive/lib
 
-# Copy over static files for the web server.
-COPY --chown=ifarchive ifarchive-static/index.html /var/ifarchive/htdocs
-COPY --chown=ifarchive ifarchive-static/misc /var/ifarchive/htdocs/misc
+# Copy over test data for the web server. (Maybe this should be a mount.)
 COPY --chown=ifarchive ifarchive-ifmap-py/testdata/if-archive /var/ifarchive/htdocs/if-archive
 COPY ifarchive-ifmap-py/testdata/set-timestamps.py /var/ifarchive/bin/testdata-set-timestamps.py
 
@@ -34,8 +32,8 @@ COPY ifarchive-ifmap-py/testdata/set-timestamps.py /var/ifarchive/bin/testdata-s
 RUN python3 /var/ifarchive/bin/testdata-set-timestamps.py /var/ifarchive/htdocs/if-archive
 
 # Make any changes needed for test-frame mode.
-COPY --chmod=755 script/tweak-for-test-mode.sh /tmp
-RUN /tmp/tweak-for-test-mode.sh
+###COPY --chmod=755 script/tweak-for-test-mode.sh /tmp
+###RUN /tmp/tweak-for-test-mode.sh
 
 COPY --chmod=755 script/testframe-start.sh /var/ifarchive/bin
 

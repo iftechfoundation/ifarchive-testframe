@@ -6,7 +6,10 @@ services:
     ports:
       - 8888:80
     volumes:
-      - ./ifarchive-static/index.html:/var/ifarchive/htdocs/index.html
+      # We will copy index-orig.html to index.html, with tweaks, at launch
+      # time. (Sadly this means that index.html cannot be edited on
+      # the fly, even though it is a mount.)
+      - ./ifarchive-static/index.html:/var/ifarchive/htdocs/index-orig.html
       - ./ifarchive-static/misc:/var/ifarchive/htdocs/misc
       - ./ifarchive-ifmap-py/make-master-index:/var/ifarchive/bin/make-master-index
       - ./ifarchive-ifmap-py/make-master-index.py:/var/ifarchive/bin/make-master-index.py

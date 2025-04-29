@@ -14,6 +14,12 @@ if [ -e /var/ifarchive/lib/testframe-started ]; then
 else
     
     echo 'Initing testframe...'
+
+    # Adjust front-page links to be server-relative rather than pointing at
+    # production domains.
+    cp /var/ifarchive/htdocs/index-orig.html /var/ifarchive/htdocs/index.html
+    sed -i 's,https://search.ifarchive.org,,g' /var/ifarchive/htdocs/index.html
+    sed -i 's,https://upload.ifarchive.org,,g' /var/ifarchive/htdocs/index.html
     
     # Initial setup for Archive index files
     /var/ifarchive/bin/make-master-index

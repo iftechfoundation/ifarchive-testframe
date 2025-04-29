@@ -32,13 +32,16 @@ On the real Archive, the file directory (`/var/ifarchive/htdocs/if-archive`) is 
 
 Then visit `http://localhost:8888/` in your browser.
 
+The admin interface is at `http://localhost:8888/admin`. Log in with username `fred`, password `password`.
+
 To get a root shell inside the container:
 
 	docker compose exec -i -t ifarch bash
 
+
 ## To develop
 
-Most of the scripts and templates used by the various repos are mounted into the container. (See the `volumes` list of `docker-compose.yml`.) This means you can edit them and the updated versions will be visible (and active) immediately inside the container.
+Most of the scripts and templates used by the various repos are mounted into the container. (See the `volumes` list of `docker-compose.yml`.) This means you can edit files and the updated versions will be visible (and active) immediately inside the container.
 
 Some changes require you to restart Apache, which means `docker compose restart`. Changes to files in `tinyapp`, `searchlib`, and `adminlib` are in this category.
 

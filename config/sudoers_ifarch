@@ -1,0 +1,8 @@
+
+Cmnd_Alias	BUILDINDEX = /var/ifarchive/bin/build-indexes-bg
+Cmnd_Alias	UNCACHE    = /var/ifarchive/bin/uncache-bg
+
+www-data	ALL = NOPASSWD: BUILDINDEX
+ifarchive	ALL = NOPASSWD: BUILDINDEX
+www-data	ALL = NOPASSWD: UNCACHE
+ifarchive	ALL = NOPASSWD: UNCACHE

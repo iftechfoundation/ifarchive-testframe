@@ -5,13 +5,16 @@ EXPOSE 80
 
 # Install Apache and Python.
 RUN apt-get update -y
-RUN apt-get install -y apache2 apache2-dev python3 python3-pip libapache2-mod-wsgi-py3
+RUN apt-get install -y sudo apache2 apache2-dev python3 python3-pip libapache2-mod-wsgi-py3
 
 RUN pip3 install markdown Jinja2 pytz mod-wsgi whoosh
 
 # Copy over a script that creates the basic directory structure.
 COPY --chmod=755 script/create-var-ifarchive.sh /tmp
 RUN /tmp/create-var-ifarchive.sh
+
+# Set up sudoers config. (Needed for the admin tool to run build-indexes-bg.)
+COPY --chmod=440 config/sudoers_ifarch /etc/sudoers.d
 
 # Set up Apache config.
 COPY config/000-ifarchive.conf /etc/apache2/sites-available

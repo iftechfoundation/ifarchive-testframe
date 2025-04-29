@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo 'uncache is not available in test mode'
+
+exit 1

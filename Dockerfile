@@ -31,10 +31,6 @@ COPY ifarchive-ifmap-py/testdata/set-timestamps.py /var/ifarchive/bin/testdata-s
 # Bang the timestamps on the (test) if-archive files.
 RUN python3 /var/ifarchive/bin/testdata-set-timestamps.py /var/ifarchive/htdocs/if-archive
 
-# Make any changes needed for test-frame mode.
-###COPY --chmod=755 script/tweak-for-test-mode.sh /tmp
-###RUN /tmp/tweak-for-test-mode.sh
-
 COPY --chmod=755 script/testframe-start.sh /var/ifarchive/bin
 
 # This script does launch-time setup and then runs Apache (non-backgrounded).

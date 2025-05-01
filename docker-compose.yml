@@ -15,6 +15,7 @@ services:
       - ./ifarchive-ifmap-py/make-master-index.py:/var/ifarchive/bin/make-master-index.py
       - ./ifarchive-ifmap-py/build-indexes:/var/ifarchive/bin/build-indexes
       - ./ifarchive-ifmap-py/build-indexes-bg:/var/ifarchive/bin/build-indexes-bg
+      - ./ifarchive-ifmap-py/configparse.py:/var/ifarchive/bin/configparse.py
       - ./script/test-uncache-bg:/var/ifarchive/bin/uncache-bg
       # for ifmap
       - ./ifarchive-ifmap-py/ifmap.py:/var/ifarchive/bin/ifmap.py

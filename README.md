@@ -2,7 +2,7 @@
 
 This repository agglomerates all (most) of the repos involved in running the [IF Archive][ifarch]. It allows you to build a test-mode Archive as a Docker container.
 
-Note: I don't have the container published anywhere. This is meant for testing and development, not real-world use.
+Note: I don't have the container published anywhere. This is meant for testing and development, not real-world use. But you can build it yourself, using the Dockerfile in this repo.
 
 [ifarch]: https://ifarchive.org
 
